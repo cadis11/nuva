@@ -217,10 +217,101 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;}
 .footer-copy{font-size:11px;color:var(--bark);letter-spacing:1px;}
 .footer-tagline-bottom{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:var(--clay);}
-.toast{position:fixed;bottom:32px;right:32px;z-index:9999;background:var(--ink);color:var(--cream);padding:14px 24px;font-size:12px;letter-spacing:1px;border-left:3px solid var(--accent);transform:translateX(120%);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);max-width:340px;}
-.toast.show{transform:translateX(0);}
-@media(max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:768px){header{padding:0 20px;}.hero{grid-template-columns:1fr;}.hero-right{display:none;}.product-grid{grid-template-columns:repeat(2,1fr);border-left:none;}.detail-layout{grid-template-columns:1fr;}.detail-gallery-col{position:static;border-right:none;border-bottom:1px solid var(--border);}.collection-header,.filter-bar,.back-nav,.admin-wrap{padding-left:20px;padding-right:20px;}.footer-top{grid-template-columns:1fr;gap:32px;}.admin-stats{grid-template-columns:1fr;}.f-row{grid-template-columns:1fr;}.modal{padding:28px 20px;}}
+.toast{position:fixed;bottom:20px;right:16px;left:16px;z-index:9999;background:var(--ink);color:var(--cream);padding:14px 20px;font-size:12px;letter-spacing:1px;border-left:3px solid var(--accent);transform:translateY(120%);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);max-width:400px;}
+.toast.show{transform:translateY(0);}
+
+/* card image — less tall */
+.card-image{aspect-ratio:4/5;}
+
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all 0.3s;}
+.mobile-nav{display:none;position:fixed;inset:0;top:72px;background:var(--warm-white);z-index:98;flex-direction:column;align-items:center;justify-content:center;gap:40px;border-top:1px solid var(--border);}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+
+@media(max-width:1024px){
+  .product-grid{grid-template-columns:repeat(3,1fr);}
+  .hero-left{padding:60px 40px;}
+  .hero-right{padding:60px 40px;}
+  .detail-info-col{padding:48px 40px;}
+  .detail-gallery-col{padding:40px;}
+}
+
+@media(max-width:900px){
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+}
+
+@media(max-width:768px){
+  /* header */
+  header{padding:0 20px;height:60px;}
+  .marquee-bar{top:60px;}
+  .page-content{padding-top:100px;}
+  nav{display:none;}
+  .hamburger{display:flex;}
+
+  /* hero */
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:48px 24px 40px;border-right:none;border-bottom:1px solid var(--border);}
+  .hero-left::before{font-size:160px;}
+  .hero-right{display:none;}
+
+  /* collection */
+  .collection-header{padding:32px 20px 20px;flex-direction:column;align-items:flex-start;gap:8px;}
+  .collection-title{font-size:28px;}
+  .filter-bar{padding:12px 20px;flex-direction:column;align-items:flex-start;gap:12px;}
+  .filter-tags{flex-wrap:wrap;}
+
+  /* product grid — 2 col on mobile */
+  .product-grid{grid-template-columns:repeat(2,1fr);border-left:none;}
+  .card-image{aspect-ratio:3/4;}
+  .card-body{padding:14px 14px 20px;}
+  .card-name{font-size:15px;margin-bottom:8px;}
+  .card-short{display:none;}
+  .card-price{font-size:14px;}
+
+  /* product detail */
+  .back-nav{padding:16px 20px;}
+  .detail-layout{grid-template-columns:1fr;}
+  .detail-gallery-col{position:static;border-right:none;border-bottom:1px solid var(--border);padding:24px 20px;}
+  .detail-info-col{padding:32px 20px;}
+  .detail-name{font-size:28px;}
+  .detail-price{font-size:22px;}
+  .gallery-main{aspect-ratio:4/3;}
+
+  /* admin */
+  .admin-wrap{padding:32px 20px;}
+  .admin-head{flex-direction:column;gap:16px;align-items:flex-start;}
+  .admin-head-right{width:100%;justify-content:space-between;}
+  .admin-stats{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .admin-stat{padding:16px 12px;}
+  .admin-stat-val{font-size:24px;}
+  .admin-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+
+  /* modal */
+  .modal-overlay{padding:0;}
+  .modal{padding:24px 20px;border-radius:0;min-height:100dvh;border:none;}
+  .f-row{grid-template-columns:1fr;}
+  .modal-actions{flex-direction:column;}
+  .btn-save-modal,.btn-cancel-modal{width:100%;text-align:center;}
+
+  /* login */
+  .login-box{width:100%;margin:20px;padding:40px 28px;}
+
+  /* footer */
+  .footer-top{grid-template-columns:1fr;gap:32px;}
+  footer{padding:48px 20px 32px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+
+@media(max-width:420px){
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .card-body{padding:10px 10px 16px;}
+  .card-name{font-size:13px;}
+  .admin-grid{grid-template-columns:1fr;}
+  .logo{font-size:20px;letter-spacing:7px;}
+}
 </style>
 </head>
 <body>
@@ -232,8 +323,20 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
     <a href="#" onclick="return false;">About</a>
     <a href="#" onclick="return false;">Contact</a>
   </nav>
-  <div class="header-right"><span class="cart-count" id="cartCount">0</span></div>
+  <div class="header-right">
+    <span class="cart-count" id="cartCount">0</span>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="showView('collection');closeMobileNav();return false;">Collection</a>
+  <a href="#" onclick="closeMobileNav();return false;">About</a>
+  <a href="#" onclick="closeMobileNav();return false;">Contact</a>
+</div>
 
 <div class="marquee-bar"><div class="marquee-track" id="mqTrack"></div></div>
 
@@ -428,6 +531,25 @@ const PASS='nuva2026';
 let products=[], editingId=null, pendingMedia=[], activeFilter='all', activeSort='', authed=false;
 let vt={size:false,color:false,custom:false};
 
+// ── MOBILE NAV ──
+function toggleMobileNav(){
+  const nav=document.getElementById('mobileNav');
+  const hbg=document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  const isOpen=nav.classList.contains('open');
+  hbg.children[0].style.transform=isOpen?'translateY(6.5px) rotate(45deg)':'';
+  hbg.children[1].style.opacity=isOpen?'0':'1';
+  hbg.children[2].style.transform=isOpen?'translateY(-6.5px) rotate(-45deg)':'';
+}
+function closeMobileNav(){
+  const nav=document.getElementById('mobileNav');
+  const hbg=document.getElementById('hamburger');
+  nav.classList.remove('open');
+  hbg.children[0].style.transform='';
+  hbg.children[1].style.opacity='1';
+  hbg.children[2].style.transform='';
+}
+
 // ── MARQUEE ──
 const msgs=['Free Delivery All Over Nepal','New Arrivals','Quality Assured','Beauty · Fashion · Lifestyle','NUVA 2026'];
 const track=document.getElementById('mqTrack');
@@ -450,6 +572,7 @@ async function loadProducts(){
 
 // ── VIEWS ──
 function showView(name){
+  closeMobileNav();
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const el=document.getElementById('view-'+name); if(!el) return;
   el.classList.add('active'); window.scrollTo(0,0);
