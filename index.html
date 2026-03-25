@@ -399,6 +399,86 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
   .admin-grid{grid-template-columns:1fr;}
   .logo{font-size:20px;letter-spacing:7px;}
 }
+
+/* ── ABOUT PAGE ── */
+.about-hero{display:grid;grid-template-columns:1fr 1fr;min-height:60vh;border-bottom:1px solid var(--border);}
+.about-hero-left{background:var(--ink);padding:80px 64px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
+.about-hero-left::before{content:'N';position:absolute;top:-60px;right:-20px;font-family:'Playfair Display',serif;font-size:320px;font-weight:300;color:rgba(196,180,154,0.07);line-height:1;pointer-events:none;}
+.about-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:20px;}
+.about-hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,4.5vw,64px);font-weight:300;line-height:1.1;color:var(--cream);margin-bottom:24px;}
+.about-hero-title em{font-style:italic;color:var(--accent-light);}
+.about-hero-sub{font-size:13px;line-height:2;color:var(--stone);max-width:380px;}
+.about-hero-right{background:var(--surface);padding:80px 64px;display:flex;flex-direction:column;justify-content:center;gap:40px;}
+.about-stat{border-left:2px solid var(--accent);padding-left:24px;}
+.about-stat-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:300;color:var(--accent);}
+.about-stat-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.about-body{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);}
+.about-body-left{padding:80px 64px;border-right:1px solid var(--border);}
+.about-body-right{padding:80px 64px;}
+.about-section-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
+.about-section-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:300;line-height:1.2;margin-bottom:24px;}
+.about-section-title em{font-style:italic;color:var(--accent);}
+.about-body-text{font-size:14px;line-height:2.1;color:var(--clay);}
+.about-body-text p{margin-bottom:16px;}
+.about-pillars{padding:80px 48px;border-bottom:1px solid var(--border);}
+.about-pillars-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:300;text-align:center;margin-bottom:8px;}
+.about-pillars-sub{font-size:12px;color:var(--muted);letter-spacing:2px;text-align:center;margin-bottom:56px;text-transform:uppercase;}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);}
+.pillar{padding:48px 40px;border-right:1px solid var(--border);transition:background 0.3s;}
+.pillar:last-child{border-right:none;}
+.pillar:hover{background:var(--surface);}
+.pillar-icon{font-size:32px;margin-bottom:20px;}
+.pillar-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:300;margin-bottom:12px;}
+.pillar-text{font-size:13px;line-height:1.9;color:var(--clay);}
+.about-cta{background:var(--ink);padding:80px 48px;text-align:center;}
+.about-cta-title{font-family:'Playfair Display',serif;font-size:40px;font-weight:300;color:var(--cream);margin-bottom:16px;}
+.about-cta-title em{font-style:italic;color:var(--accent-light);}
+.about-cta-sub{font-size:13px;color:var(--stone);margin-bottom:40px;line-height:2;}
+.about-cta-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 40px;background:var(--accent);color:var(--ink);font-size:11px;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;transition:background 0.3s,gap 0.3s;}
+.about-cta-btn:hover{background:var(--accent-light);gap:20px;}
+
+/* ── ORDER CONFIRMATION PAGE ── */
+.confirm-wrap{max-width:640px;margin:0 auto;padding:80px 48px;text-align:center;}
+.confirm-icon{width:80px;height:80px;border-radius:50%;background:#e8f5e9;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.confirm-icon svg{animation:checkDraw 0.6s ease 0.2s both;}
+@keyframes checkDraw{from{stroke-dashoffset:50}to{stroke-dashoffset:0}}
+.confirm-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.confirm-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:300;line-height:1.2;margin-bottom:16px;}
+.confirm-title em{font-style:italic;color:var(--accent);}
+.confirm-sub{font-size:14px;line-height:2;color:var(--clay);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto;}
+.confirm-card{background:var(--surface);border:1px solid var(--border);padding:32px;margin-bottom:40px;text-align:left;}
+.confirm-card-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.confirm-row{display:flex;justify-content:space-between;align-items:start;padding:10px 0;border-bottom:1px solid var(--border);gap:12px;}
+.confirm-row:last-child{border-bottom:none;}
+.confirm-row-label{font-size:12px;color:var(--muted);letter-spacing:1px;flex-shrink:0;}
+.confirm-row-val{font-size:13px;color:var(--ink);text-align:right;}
+.confirm-total-row{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;margin-top:4px;border-top:2px solid var(--border);}
+.confirm-total-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.confirm-total-val{font-family:'Playfair Display',serif;font-size:24px;font-weight:300;color:var(--accent);}
+.confirm-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.confirm-btn-primary{padding:14px 36px;background:var(--ink);color:var(--cream);border:none;cursor:pointer;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Jost',sans-serif;transition:background 0.3s;}
+.confirm-btn-primary:hover{background:var(--accent);}
+.confirm-btn-secondary{padding:14px 28px;background:transparent;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;transition:all 0.2s;}
+.confirm-btn-secondary:hover{border-color:var(--ink);color:var(--ink);}
+.confirm-whatsapp-note{font-size:12px;color:var(--muted);margin-top:24px;line-height:1.8;display:flex;align-items:center;justify-content:center;gap:8px;}
+
+@media(max-width:768px){
+  .about-hero{grid-template-columns:1fr;}
+  .about-hero-left{padding:48px 24px 40px;}
+  .about-hero-right{padding:40px 24px;gap:28px;}
+  .about-body{grid-template-columns:1fr;}
+  .about-body-left{padding:40px 24px;border-right:none;border-bottom:1px solid var(--border);}
+  .about-body-right{padding:40px 24px;}
+  .about-pillars{padding:48px 20px;}
+  .pillars-grid{grid-template-columns:1fr;}
+  .pillar{border-right:none;border-bottom:1px solid var(--border);}
+  .pillar:last-child{border-bottom:none;}
+  .about-cta{padding:48px 20px;}
+  .confirm-wrap{padding:40px 20px;}
+  .confirm-actions{flex-direction:column;align-items:stretch;}
+  .confirm-btn-primary,.confirm-btn-secondary{text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -407,7 +487,7 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
   <a class="logo" onclick="goHome()">NUVA<span>.</span></a>
   <nav>
     <a href="#" id="nav-collection" class="active" onclick="showView('collection');return false;">Collection</a>
-    <a href="#" onclick="return false;">About</a>
+    <a href="#" id="nav-about" onclick="showView('about');return false;">About</a>
     <a href="#" onclick="return false;">Contact</a>
   </nav>
   <div class="header-right">
@@ -429,7 +509,7 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#" onclick="showView('collection');closeMobileNav();return false;">Collection</a>
-  <a href="#" onclick="closeMobileNav();return false;">About</a>
+  <a href="#" onclick="showView('about');closeMobileNav();return false;">About</a>
   <a href="#" onclick="closeMobileNav();return false;">Contact</a>
 </div>
 
@@ -682,11 +762,127 @@ footer{background:var(--ink);color:var(--stone);padding:80px 48px 40px;margin-to
   </div>
 </div>
 
+<!-- ABOUT -->
+<div id="view-about" class="view page-content">
+  <div class="about-hero">
+    <div class="about-hero-left">
+      <div class="about-eyebrow">Our Story · Est. 2026</div>
+      <h1 class="about-hero-title">Bringing the world's<br>best to <em>Nepal.</em></h1>
+      <p class="about-hero-sub">NUVA was born from a simple belief — that people in Nepal deserve access to beautiful, well-made products without compromise. We find them. We bring them. You enjoy them.</p>
+    </div>
+    <div class="about-hero-right">
+      <div class="about-stat"><div class="about-stat-num">2026</div><div class="about-stat-label">Year Founded</div></div>
+      <div class="about-stat"><div class="about-stat-num">NP</div><div class="about-stat-label">Delivering Nationwide</div></div>
+      <div class="about-stat"><div class="about-stat-num">4</div><div class="about-stat-label">NUVA Numerology</div></div>
+    </div>
+  </div>
+
+  <div class="about-body">
+    <div class="about-body-left">
+      <div class="about-section-label">The Beginning</div>
+      <h2 class="about-section-title">More than a store —<br>a <em>curation</em>.</h2>
+      <div class="about-body-text">
+        <p>NUVA means "new." It's a promise — to keep seeking, keep discovering, and keep bringing fresh things to your doorstep. We scour global markets so you don't have to.</p>
+        <p>Every product in our collection is handpicked for its quality, design, and the way it makes everyday life feel a little more refined. Nothing average. Nothing wasteful.</p>
+        <p>We started with a single question: why should luxury lifestyle products be hard to find in Nepal? NUVA is our answer.</p>
+      </div>
+    </div>
+    <div class="about-body-right">
+      <div class="about-section-label">Our Promise</div>
+      <h2 class="about-section-title">Quality you can<br><em>feel</em> the difference.</h2>
+      <div class="about-body-text">
+        <p>We don't just list products — we test them, believe in them, and stand behind every single one. If it doesn't meet our standard, it doesn't make it to NUVA.</p>
+        <p>Fast delivery. Easy returns. Real people behind every order. When you message us on WhatsApp, you're talking directly to the team — not a bot, not a call center.</p>
+        <p>That's the NUVA difference. Personal. Refined. Yours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-pillars">
+    <h2 class="about-pillars-title">What we stand for</h2>
+    <p class="about-pillars-sub">Three pillars, one brand</p>
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <div class="pillar-title">Curation</div>
+        <p class="pillar-text">We don't sell everything. We sell the right things. Every product is chosen with intention — for beauty, quality, and purpose in your daily life.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">◈</div>
+        <div class="pillar-title">Accessibility</div>
+        <p class="pillar-text">Premium products shouldn't be a privilege. NUVA makes refined living accessible to everyone across Nepal, delivered right to your door.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">❋</div>
+        <div class="pillar-title">Trust</div>
+        <p class="pillar-text">Every order is personal to us. We confirm by hand, pack with care, and follow up to make sure you're happy. That's not policy — it's just how we work.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-cta">
+    <h2 class="about-cta-title">Ready to discover<br>something <em>new?</em></h2>
+    <p class="about-cta-sub">Browse our curated collection of beauty, fashion, and lifestyle products.<br>Free delivery anywhere in Nepal.</p>
+    <button class="about-cta-btn" onclick="showView('collection')">
+      Shop the Collection
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ORDER CONFIRMATION -->
+<div id="view-confirm" class="view page-content">
+  <div class="confirm-wrap">
+    <div class="confirm-icon">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M8 18l7 7 13-13" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" stroke-dashoffset="0"/>
+      </svg>
+    </div>
+    <div class="confirm-eyebrow">Order Placed</div>
+    <h1 class="confirm-title">Thank you for<br>your <em>order!</em></h1>
+    <p class="confirm-sub">Your order has been sent to us via WhatsApp. We'll review it and confirm your delivery time shortly. Please keep your phone nearby!</p>
+
+    <div class="confirm-card" id="confirmSummaryCard" style="display:none">
+      <div class="confirm-card-title">Order Summary</div>
+      <div id="confirmSummaryItems"></div>
+    </div>
+
+    <div class="confirm-card">
+      <div class="confirm-card-title">What happens next?</div>
+      <div class="confirm-row">
+        <span class="confirm-row-label">Step 1</span>
+        <span class="confirm-row-val">We receive your WhatsApp message and review your order</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-row-label">Step 2</span>
+        <span class="confirm-row-val">We confirm availability and send you a reply within a few hours</span>
+      </div>
+      <div class="confirm-row">
+        <span class="confirm-row-label">Step 3</span>
+        <span class="confirm-row-val">Your order is packed and dispatched to your delivery address</span>
+      </div>
+      <div class="confirm-row" style="border-bottom:none">
+        <span class="confirm-row-label">Step 4</span>
+        <span class="confirm-row-val">You receive your NUVA products — enjoy! 🎉</span>
+      </div>
+    </div>
+
+    <div class="confirm-actions">
+      <button class="confirm-btn-primary" onclick="showView('collection')">Continue Shopping</button>
+      <button class="confirm-btn-secondary" onclick="showView('home')">Back to Home</button>
+    </div>
+    <p class="confirm-whatsapp-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Questions? Message us directly on WhatsApp — +977 9823783486
+    </p>
+  </div>
+</div>
+
 <footer>
   <div class="footer-top">
     <div><div class="footer-brand-name">NUVA<span>.</span></div><p class="footer-tagline">Thoughtfully curated beauty, fashion, and lifestyle products. Simply refined, always.</p></div>
     <div class="footer-col"><div class="footer-col-title">Shop</div><ul><li onclick="showView('collection')">All Products</li><li onclick="filterAndGo('Beauty & Skincare')">Beauty</li><li onclick="filterAndGo('Fashion & Accessories')">Fashion</li><li onclick="filterAndGo('Home & Lifestyle')">Lifestyle</li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Help</div><ul><li>Shipping Policy</li><li>Returns</li><li>Warranty</li><li>Contact Us</li></ul></div>
+    <div class="footer-col"><div class="footer-col-title">Help</div><ul><li>Shipping Policy</li><li>Returns</li><li>Warranty</li><li onclick="showView('about')">About NUVA</li></ul></div>
     <div class="footer-col"><div class="footer-col-title">Connect</div><ul><li>Instagram</li><li>Facebook</li><li>TikTok</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-copy">© 2026 NUVA. All rights reserved. Nepal.</p><p class="footer-tagline-bottom">Simply refined.</p></div>
@@ -756,6 +952,7 @@ function showView(name){
   el.classList.add('active');window.scrollTo(0,0);
   document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
   if(name==='collection'){document.getElementById('nav-collection').classList.add('active');renderGrid();}
+  if(name==='about'){document.getElementById('nav-about').classList.add('active');}
   if(name==='home')updateCount();
   if(name==='admin'){if(!authed){openLogin();return;}renderAdmin();}
 }
@@ -1042,10 +1239,31 @@ function sendWhatsAppOrder(){
 
   const encoded=encodeURIComponent(msg);
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`,'_blank');
-  // Clear cart and close
+
+  // Save order summary for confirmation page
+  const savedItems=[...cart];
+  const savedTotal=cartTotal();
+
+  // Clear cart
   cart=[];saveCart();updateCartUI();
   closeCheckout();
-  toast('Order sent via WhatsApp! We will confirm shortly. ✓',5000);
+
+  // Build confirmation summary card
+  const card=document.getElementById('confirmSummaryCard');
+  const itemsEl=document.getElementById('confirmSummaryItems');
+  itemsEl.innerHTML=savedItems.map(item=>`
+    <div class="confirm-row">
+      <span class="confirm-row-label">${item.name}${item.variant?' ('+item.variant+')':''} × ${item.qty}</span>
+      <span class="confirm-row-val">Rs ${Number(item.price*item.qty).toLocaleString()}</span>
+    </div>`).join('')+`
+    <div class="confirm-total-row">
+      <span class="confirm-total-label">Total</span>
+      <span class="confirm-total-val">Rs ${Number(savedTotal).toLocaleString()}</span>
+    </div>`;
+  card.style.display='block';
+
+  // Go to confirmation page
+  showView('confirm');
 }
 
 // ── ADMIN RENDER ──
