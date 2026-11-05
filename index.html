@@ -149,7 +149,8 @@ a.stage-fig:hover .stage-name{text-decoration:underline;text-underline-offset:4p
 .cat-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,.66),transparent 55%);}
 .cat-tile.noimg::after{display:none;}
 .cat-tile.noimg{color:var(--ink);}
-.cat-tile.noimg .cat-init{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font:400 120px/1 var(--serif);color:var(--stone);}
+.cat-tile.noimg{background:linear-gradient(160deg,var(--cream),var(--sand));}
+.cat-tile.noimg .cat-init{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border:1px solid var(--accent-fill);border-radius:50%;display:flex;align-items:center;justify-content:center;font:400 32px/1 var(--serif);color:var(--accent);}
 .cat-txt{position:relative;z-index:1;}
 .cat-name{font:400 24px/1.2 var(--serif);display:block;color:inherit;}
 .cat-count{font-size:12px;color:var(--on-dark-soft);letter-spacing:.04em;}
@@ -194,7 +195,9 @@ a.stage-fig:hover .stage-name{text-decoration:underline;text-underline-offset:4p
 .card-image img,.card-image video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease),opacity .4s;}
 .card-image .card-image-hover{opacity:0;}
 @media(hover:hover){.product-card:hover .card-image-hover{opacity:1;}.product-card:hover .card-image .card-main{transform:scale(1.03);}}
-.card-no-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 72px/1 var(--serif);color:var(--stone);}
+.card-no-img{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(160deg,var(--cream),var(--sand));}
+.ph-mono{width:56px;height:56px;border:1px solid var(--accent-fill);border-radius:50%;display:flex;align-items:center;justify-content:center;font:400 24px/1 var(--serif);color:var(--accent);}
+.ph-label{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
 .badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;z-index:2;pointer-events:none;}
 .badge{font:500 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;background:var(--ink);color:var(--on-dark);}
 .badge.sale{background:var(--sale);color:#fff;}
@@ -213,7 +216,6 @@ a.stage-fig:hover .stage-name{text-decoration:underline;text-underline-offset:4p
 .card-price-row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
 .card-price{font:500 15px/1.4 var(--sans);color:var(--ink);}
 .card-original{font-size:13px;color:var(--muted);text-decoration:line-through;}
-.card-skel .card-image{aspect-ratio:4/5;}
 .bar-skel{height:10px;margin-top:14px;width:80%;}
 .bar-skel+.bar-skel{width:40%;margin-top:10px;}
 .empty-grid,.grid-error{grid-column:1/-1;padding:80px 16px;text-align:center;}
@@ -233,7 +235,7 @@ a.stage-fig:hover .stage-name{text-decoration:underline;text-underline-offset:4p
 .crumb-cur{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;}
 .detail-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;padding-block:16px 96px;align-items:start;}
 .detail-gallery-col{position:sticky;top:calc(var(--header-h) + var(--bar-h) + 24px);min-width:0;}
-.gallery-main{margin-inline:auto;width:min(100%,calc((100svh - 280px)*.8));min-width:min(100%,360px);aspect-ratio:4/5;background:var(--sand);overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.gallery-main{position:relative;margin-inline:auto;width:min(100%,calc((100svh - 280px)*.8));min-width:min(100%,360px);aspect-ratio:4/5;background:var(--sand);overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
 .gallery-main img,.gallery-main video{width:100%;height:100%;object-fit:cover;}
 .gallery-thumbs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 .g-thumb{width:64px;height:64px;background:var(--sand);overflow:hidden;cursor:pointer;border:none;padding:0;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -666,6 +668,7 @@ footer{background:var(--ink);color:var(--on-dark-soft);padding-block:72px 32px;o
 }
 @media(max-width:560px){.announce-track>:nth-child(n+2){display:none;}}
 @media(max-width:480px){
+  .ph-label{letter-spacing:.1em;}
   .wa-ask{letter-spacing:.06em;font-size:11px;padding:0 12px;}
   .co-sum-d{margin-bottom:20px;}
   .checkout-summary-title{pointer-events:auto;cursor:pointer;margin-bottom:0;}
@@ -684,13 +687,13 @@ footer{background:var(--ink);color:var(--on-dark-soft);padding-block:72px 32px;o
 .cat-row[data-n="1"] .cat-tile{flex:1 1 100%;aspect-ratio:21/9;}
 .cat-row[data-n="1"] .cat-tile img{object-position:center 30%;}
 .cat-row[data-n="2"] .cat-tile{flex:1 1 0;aspect-ratio:4/3;}
-body.nav-open header{background:var(--warm-white);}
+body.nav-open header{background:var(--warm-white);border-bottom-color:var(--border);z-index:102;}
 @media(max-width:768px){
   .cat-row[data-n="1"] .cat-tile,.cat-row[data-n="2"] .cat-tile{flex:0 0 72vw;aspect-ratio:4/5;}
   .cat-row[data-n="1"] .cat-tile{flex-basis:100%;max-width:none;aspect-ratio:4/3;}
 }
 @media(max-width:900px){
-  .stage-small{max-width:200px;}
+  .stage-small{max-width:136px;}
   .stage-side.s1{grid-column:1/-1;justify-content:center;}
   .stage-side.s1 .stage-small{margin-inline:auto;}
 }
@@ -699,7 +702,6 @@ body.nav-open header{background:var(--warm-white);}
 .btn-wa .i{font-size:20px;}
 .stage-side.s1{justify-content:flex-end;}
 .mobile-nav .btn{margin-top:8px;}
-.gallery-ph{font:400 96px/1 var(--serif);color:var(--stone);}
 </style>
 </head>
 <body>
@@ -1308,7 +1310,7 @@ const POLICIES=[
   {id:'warranty',title:'Warranty',text:'Please ask us on WhatsApp about a specific item.'}
 ];
 
-// ── SAFE HELPERS (P1/P3) ──
+// ── SAFE HELPERS ──
 const $=id=>document.getElementById(id);
 const ESC_MAP={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>ESC_MAP[c]);}
@@ -1519,7 +1521,7 @@ function renderHome(){renderHero();renderCats();renderLatest();}
 function syncChips(){document.querySelectorAll('.filter-tag').forEach(t=>t.classList.toggle('active',t.dataset.cat===activeFilter));}
 function filterAndGo(cat){activeFilter=cat;showView('collection');}
 
-// ── CONTACT / POLICIES / FOOTER (P2) ──
+// ── CONTACT / POLICIES / FOOTER ──
 function renderContact(){
   const rows=[];
   const wa='https://wa.me/'+SITE.whatsapp;
@@ -1596,7 +1598,7 @@ function cardHTML(p){
   const vm=validMedia(p);const m0=vm[0],m1=vm[1];
   const opts=productGroups(p).length>0;
   const nm=esc(p.name);
-  const first=m0?(isVideo(m0)?`<video class="card-main" src="${esc(safeUrl(m0.url))}#t=0.1" muted playsinline preload="metadata"></video>`:`<img class="card-main" src="${esc(safeUrl(m0.url))}" alt="${nm}" loading="lazy" decoding="async" width="480" height="600">`):`<div class="card-no-img" aria-hidden="true">${esc(initial(p.name))}</div>`;
+  const first=m0?(isVideo(m0)?`<video class="card-main" src="${esc(safeUrl(m0.url))}#t=0.1" muted playsinline preload="metadata"></video>`:`<img class="card-main" src="${esc(safeUrl(m0.url))}" alt="${nm}" loading="lazy" decoding="async" width="480" height="600">`):`<div class="card-no-img" aria-hidden="true"><span class="ph-mono">${esc(initial(p.name))}</span><span class="ph-label">Photo coming soon</span></div>`;
   const badges=[disc?`<span class="badge sale">−${disc}%</span>`:'',low?`<span class="badge low">Only ${lim} left</span>`:'',(!disc&&!low&&isNew)?'<span class="badge">New</span>':''].join('');
   return `<article class="product-card" data-id="${esc(p.id)}">
       <div class="card-image">
@@ -1676,7 +1678,7 @@ function showProduct(id){
   if(p.custom_label&&vs.length)customHtml=`<div class="variant-section" data-group="custom"><div class="variant-label">${esc(p.custom_label)} <span class="variant-selected" id="selCustom">— Select</span></div><div class="variant-options">${vs.map(v=>`<button type="button" class="variant-opt" data-act="custom" data-val="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join('')}</div></div>`;
 
   const thumbs=vm.map((m,i)=>`<button type="button" class="g-thumb ${i===0?'active':''}" data-act="thumb" data-i="${i}" aria-label="Show ${isVideo(m)?'video':'photo'} ${i+1}">${isVideo(m)?`<video src="${esc(safeUrl(m.url))}#t=0.1" muted preload="metadata"></video><div class="g-thumb-play">${SVG('play','i-fill')}</div>`:`<img src="${esc(safeUrl(m.url))}" alt="" loading="lazy" decoding="async" width="64" height="64">`}</button>`).join('');
-  const main=vm[0]?mainMedia(vm[0],p.name):`<div style="font:400 96px/1 var(--serif);color:var(--stone)" aria-hidden="true">${esc(initial(p.name))}</div>`;
+  const main=vm[0]?mainMedia(vm[0],p.name):`<div class="card-no-img" aria-hidden="true"><span class="ph-mono">${esc(initial(p.name))}</span><span class="ph-label">Photo coming soon</span></div>`;
   const lim=stockLimit(p);
   const waHref='https://wa.me/'+SITE.whatsapp+'?text='+encodeURIComponent('Hello Senovia, I have a question about '+p.name+'.');
   const pol=id=>{const x=POLICIES.find(q=>q.id===id);return x?`<p>${esc(x.text)}</p>`:'';};
